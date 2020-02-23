@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Josh\\source\\repos\\Calculator\\Calculator\\Calculator.csproj": {}
+    "C:\\Users\\Josh\\Documents\\Github\\CalculatorApp\\Calculator\\Calculator.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Josh\\source\\repos\\Calculator\\Calculator\\Calculator.csproj": {
+    "C:\\Users\\Josh\\Documents\\Github\\CalculatorApp\\Calculator\\Calculator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Josh\\source\\repos\\Calculator\\Calculator\\Calculator.csproj",
+        "projectUniqueName": "C:\\Users\\Josh\\Documents\\Github\\CalculatorApp\\Calculator\\Calculator.csproj",
         "projectName": "Calculator",
-        "projectPath": "C:\\Users\\Josh\\source\\repos\\Calculator\\Calculator\\Calculator.csproj",
+        "projectPath": "C:\\Users\\Josh\\Documents\\Github\\CalculatorApp\\Calculator\\Calculator.csproj",
         "packagesPath": "C:\\Users\\Josh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Josh\\source\\repos\\Calculator\\Calculator\\obj\\",
+        "outputPath": "C:\\Users\\Josh\\Documents\\Github\\CalculatorApp\\Calculator\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
