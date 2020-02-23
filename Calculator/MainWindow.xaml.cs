@@ -23,6 +23,19 @@ namespace Calculator
     {
 
         private ConfigurationData m_data;
+        decimal temptotal = 0;
+        bool newtotal;
+
+        enum operations
+        {
+            idle,
+            plus,
+            minus,
+            multiply,
+            divide
+        };
+
+        operations operation;
 
         public MainWindow()
         {
@@ -33,7 +46,8 @@ namespace Calculator
 
         private void B1_Click(object sender, RoutedEventArgs e)
         {
-            if(m_data.total != 0)
+
+            if (m_data.total != 0)
             {
                 m_data.total *= 10;
                 m_data.total += 1;
@@ -42,6 +56,12 @@ namespace Calculator
             {
                 m_data.total = 1;
             }
+            if (newtotal)
+            {
+                m_data.total = 1;
+                newtotal = false;
+            }
+
         }
 
         private void B2_Click(object sender, RoutedEventArgs e)
@@ -54,6 +74,11 @@ namespace Calculator
             else
             {
                 m_data.total = 2;
+            }
+            if (newtotal)
+            {
+                m_data.total = 2;
+                newtotal = false;
             }
         }
 
@@ -68,6 +93,11 @@ namespace Calculator
             {
                 m_data.total = 3;
             }
+            if (newtotal)
+            {
+                m_data.total = 3;
+                newtotal = false;
+            }
         }
 
         private void B4_Click(object sender, RoutedEventArgs e)
@@ -80,6 +110,11 @@ namespace Calculator
             else
             {
                 m_data.total = 4;
+            }
+            if (newtotal)
+            {
+                m_data.total = 4;
+                newtotal = false;
             }
         }
 
@@ -94,6 +129,11 @@ namespace Calculator
             {
                 m_data.total = 5;
             }
+            if (newtotal)
+            {
+                m_data.total = 5;
+                newtotal = false;
+            }
         }
 
         private void B6_Click(object sender, RoutedEventArgs e)
@@ -106,6 +146,11 @@ namespace Calculator
             else
             {
                 m_data.total = 6;
+            }
+            if (newtotal)
+            {
+                m_data.total = 6;
+                newtotal = false;
             }
         }
 
@@ -120,6 +165,11 @@ namespace Calculator
             {
                 m_data.total = 7;
             }
+            if (newtotal)
+            {
+                m_data.total = 7;
+                newtotal = false;
+            }
         }
 
         private void B8_Click(object sender, RoutedEventArgs e)
@@ -133,15 +183,23 @@ namespace Calculator
             {
                 m_data.total = 8;
             }
+            if (newtotal)
+            {
+                m_data.total = 8;
+                newtotal = false;
+            }
         }
         private void BPlus_Click(object sender, RoutedEventArgs e)
         {
-
+            temptotal = m_data.total;
+            Console.WriteLine("Hello {0}", temptotal);
+            operation = operations.plus;
+            newtotal = true;
         }
 
         private void BMinus_Click(object sender, RoutedEventArgs e)
         {
-
+            temptotal = m_data.total;
         }
 
         private void BClear_Click(object sender, RoutedEventArgs e)
@@ -152,6 +210,16 @@ namespace Calculator
         private void BSplit_Click(object sender, RoutedEventArgs e)
         {
             m_data.total /= 2;
+        }
+
+        private void BEquals_Click(object sender, RoutedEventArgs e)
+        {
+            if(operation == operations.plus)
+            {
+                m_data.total += temptotal;
+                temptotal = 0;
+                operation = operations.idle;
+            }
         }
     }
     public class ConfigurationData : INotifyPropertyChanged
