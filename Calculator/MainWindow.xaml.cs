@@ -25,6 +25,7 @@ namespace Calculator
         private ConfigurationData m_data;
         decimal temptotal = 0;
         bool newtotal;
+        int sign = 1;
 
         enum operations
         {
@@ -50,7 +51,7 @@ namespace Calculator
             if (m_data.total != 0)
             {
                 m_data.total *= 10;
-                m_data.total += 1;
+                m_data.total += (1 * sign);
             }
             else
             {
@@ -69,7 +70,7 @@ namespace Calculator
             if (m_data.total != 0)
             {
                 m_data.total *= 10;
-                m_data.total += 2;
+                m_data.total += (2 * sign);
             }
             else
             {
@@ -87,7 +88,7 @@ namespace Calculator
             if (m_data.total != 0)
             {
                 m_data.total *= 10;
-                m_data.total += 3;
+                m_data.total += (3 * sign);
             }
             else
             {
@@ -105,7 +106,7 @@ namespace Calculator
             if (m_data.total != 0)
             {
                 m_data.total *= 10;
-                m_data.total += 4;
+                m_data.total += (4 * sign);
             }
             else
             {
@@ -123,7 +124,7 @@ namespace Calculator
             if (m_data.total != 0)
             {
                 m_data.total *= 10;
-                m_data.total += 5;
+                m_data.total += (5 * sign);
             }
             else
             {
@@ -141,7 +142,7 @@ namespace Calculator
             if (m_data.total != 0)
             {
                 m_data.total *= 10;
-                m_data.total += 6;
+                m_data.total += (6 * sign);
             }
             else
             {
@@ -159,7 +160,7 @@ namespace Calculator
             if (m_data.total != 0)
             {
                 m_data.total *= 10;
-                m_data.total += 7;
+                m_data.total += (7 * sign);
             }
             else
             {
@@ -177,7 +178,7 @@ namespace Calculator
             if (m_data.total != 0)
             {
                 m_data.total *= 10;
-                m_data.total += 8;
+                m_data.total += (8 * sign);
             }
             else
             {
@@ -189,10 +190,48 @@ namespace Calculator
                 newtotal = false;
             }
         }
+        private void B9_Click(object sender, RoutedEventArgs e)
+        {
+            if (m_data.total != 0)
+            {
+                m_data.total *= 10;
+                m_data.total += (9 * sign);
+            }
+            else
+            {
+                m_data.total = 9;
+            }
+            if (newtotal)
+            {
+                m_data.total = 9;
+                newtotal = false;
+            }
+        }
+
+        private void B0_Click(object sender, RoutedEventArgs e)
+        {
+            if (m_data.total != 0)
+            {
+                m_data.total *= 10;
+                m_data.total += 0;
+            }
+            else
+            {
+                m_data.total = 0;
+            }
+            if (newtotal)
+            {
+                m_data.total = 0;
+                newtotal = false;
+            }
+        }
+
+
+        /* Operation Buttons*/
+
         private void BPlus_Click(object sender, RoutedEventArgs e)
         {
             temptotal = m_data.total;
-            Console.WriteLine("Hello {0}", temptotal);
             operation = operations.plus;
             newtotal = true;
         }
@@ -200,25 +239,75 @@ namespace Calculator
         private void BMinus_Click(object sender, RoutedEventArgs e)
         {
             temptotal = m_data.total;
+            operation = operations.minus;
+            newtotal = true;
+        }
+
+        private void BMultiply_Click(object sender, RoutedEventArgs e)
+        {
+            temptotal = m_data.total;
+            operation = operations.multiply;
+            newtotal = true;
+        }
+
+        private void BDivide_Click(object sender, RoutedEventArgs e)
+        {
+            temptotal = m_data.total;
+            operation = operations.divide;
+            newtotal = true;
         }
 
         private void BClear_Click(object sender, RoutedEventArgs e)
         {
             m_data.total = 0;
+            temptotal = 0;
+            sign = 1;
         }
 
-        private void BSplit_Click(object sender, RoutedEventArgs e)
+        private void BPosNeg_Click(object sender, RoutedEventArgs e)
         {
-            m_data.total /= 2;
+            m_data.total *= -1;
+            sign = (sign * -1);
         }
 
         private void BEquals_Click(object sender, RoutedEventArgs e)
         {
-            if(operation == operations.plus)
+
+            switch(operation)
             {
-                m_data.total += temptotal;
-                temptotal = 0;
-                operation = operations.idle;
+                case operations.plus:
+                    {
+                        m_data.total += temptotal;
+                        temptotal = 0;
+                        sign = 1;
+                        operation = operations.idle;
+                        break;
+                    }
+                case operations.minus:
+                    {
+                        m_data.total = (temptotal - m_data.total);
+                        temptotal = 0;
+                        sign = 1;
+                        operation = operations.idle;
+                        break;
+                    }
+                case operations.multiply:
+                    {
+                        m_data.total *= temptotal;
+                        temptotal = 0;
+                        sign = 1;
+                        operation = operations.idle;
+                        break;
+                    }
+                case operations.divide:
+                    {
+                        m_data.total = (temptotal / m_data.total);
+                        temptotal = 0;
+                        sign = 1;
+                        operation = operations.idle;
+                        break;
+                    }
+                default: break;
             }
         }
     }
