@@ -19,12 +19,13 @@
         <Button x:Name="BPlus" Content="+" HorizontalAlignment="Left" Height="40" Margin="229,275,0,0" VerticalAlignment="Top" Width="65" Click="BPlus_Click"/>
         <Button x:Name="BMinus" Content="-" HorizontalAlignment="Left" Height="40" Margin="229,325,0,0" VerticalAlignment="Top" Width="65" Click="BMinus_Click"/>
         <Button x:Name="BClear" Content="Clear" HorizontalAlignment="Left" Height="40" Margin="82,373,0,0" VerticalAlignment="Top" Width="65" Click="BClear_Click"/>
-        <Button x:Name="BPosNeg" Content="+/-" HorizontalAlignment="Left" Height="40" Margin="82,325,0,0" VerticalAlignment="Top" Width="65" Click="BPosNeg_Click" />
+        <Button x:Name="BPosNeg" Content="+/-" HorizontalAlignment="Left" Height="40" Margin="156,275,0,0" VerticalAlignment="Top" Width="65" Click="BPosNeg_Click" />
         <Button x:Name="BEquals" Content="=" HorizontalAlignment="Left" Height="40" Margin="229,374,0,0" VerticalAlignment="Top" Width="65" Click="BEquals_Click" />
         <Button x:Name="B9" Content="9" HorizontalAlignment="Left" Height="40" Margin="5,172,0,0" VerticalAlignment="Top" Width="65" Click="B9_Click"/>
         <Button x:Name="B0" Content="0" HorizontalAlignment="Left" Height="40" Margin="79,172,0,0" VerticalAlignment="Top" Width="65" Click="B0_Click"/>
         <Button x:Name="BMultiply" Content="X" HorizontalAlignment="Left" Height="40" Margin="156,325,0,0" VerticalAlignment="Top" Width="65" Click="BMultiply_Click" />
         <Button x:Name="BDivide" Content="/" HorizontalAlignment="Left" Height="40" Margin="156,373,0,0" VerticalAlignment="Top" Width="65" Click="BDivide_Click" />
+        <Button x:Name="BSquare" Content="Square" HorizontalAlignment="Left" Height="40" Margin="82,325,0,0" VerticalAlignment="Top" Width="65" Click="BSquare_Click" />
 
     </Grid>
 </Window>

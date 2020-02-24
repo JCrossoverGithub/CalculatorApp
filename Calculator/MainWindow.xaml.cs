@@ -229,6 +229,10 @@ namespace Calculator
 
         /* Operation Buttons*/
 
+        private void BSquare_Click(object sender, RoutedEventArgs e)
+        {
+            m_data.total *= m_data.total;
+        }
         private void BPlus_Click(object sender, RoutedEventArgs e)
         {
             temptotal = m_data.total;
@@ -310,6 +314,7 @@ namespace Calculator
                 default: break;
             }
         }
+
     }
     public class ConfigurationData : INotifyPropertyChanged
     {
